@@ -4,7 +4,7 @@ from faker import Faker
 import random
 from datetime import datetime, timedelta
 
-# Установим сид для воспроизводимости
+# сид для воспроизводимости
 np.random.seed(42)
 random.seed(42)
 fake = Faker()
@@ -58,5 +58,7 @@ df = pd.DataFrame(rows)
 
 
 df.to_parquet("data/raw/transactions.parquet", index=False)
+df.to_csv("data/raw/transactions.csv", index=False)
 
-print(" Датасет сгенерирован и сохранён: data/raw/transactions.parquet")
+print("🔹 Генерация ложных транзакций")
+
